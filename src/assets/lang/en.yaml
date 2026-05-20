@@ -1,0 +1,230 @@
+sidebar:
+  twin_finder: Duplicate Finder
+  photo_cleaner: Media Cleaner
+  photo_sorter: Media Sorter
+comp:
+  browse: Browse
+  log_header: EVENT LOG
+  progress_processed: Processed
+  progress_calc: Calculating...
+time:
+  min: min.
+  sec: sec.
+  remaining: remaining
+  done: Done
+common:
+  stop: Stop
+  error_select_folder: 'Error: Select a folder!'
+  step: Step
+  stat_files: FILES
+twin:
+  title_white: 'Duplicate '
+  title_green: Finder
+  description: Find and remove similar or identical media files in your collection.
+  stat_duplicates: DUPLICATES
+  dir_title: Scan Directory
+  path_hint: Select a folder to scan
+  dir_hint: 📁 The app will automatically create a {prefix}<folder_name> folder
+    next to the selected directory and move all found duplicates there.
+  sim_title: Similarity Threshold
+  slider_left: Identical only
+  slider_right: Very rough
+  sim_hint_strict: 🔒 Strict mode — only identical files with matching hash.
+  sim_hint_optimal: ⚡ Optimal — burst shots, similar angles and slight lighting differences.
+  sim_hint_aggressive: ⚠️ Aggressive — similar in color and overall composition.
+  sim_hint_rough: 🔥 Very rough — may consider different photos identical. Review the
+    results.
+  params_title: Search Parameters
+  opt_fast_title: Fast Search
+  opt_fast_desc: Compares only neighboring files
+  opt_window_title: Window Size
+  opt_window_desc: Number of neighbors to compare
+  opt_hint_fast: '⚡ Fast mode: Compares a file only with a selected number of neighbors.
+    Ideal for organized folders where files are not shuffled.'
+  opt_hint_deep: '🔍 Deep analysis: Every photo is compared with all others. Takes
+    more time, but finds duplicates even in fully shuffled collections.'
+  btn_run: Start Analysis
+  launch_safe: |
+    Safe analysis.
+  launch_hint: 'Files are not deleted, but moved to the '
+  launch_hint_end: ' folder.'
+  stop_msg: ⚠️ Stopping process... Please wait.
+clean:
+  title_white: 'Media '
+  title_green: Cleaner
+  description: Automatically find and move blurry, too dark, or corrupted files.
+  stat_bad: REJECTED
+  dir_title: Scan Directory
+  path_hint: Select a folder to scan
+  dir_hint: 📁 The app will automatically create a {prefix}<name> folder next
+    to the selected directory and move all rejected files there.
+  photo_title: PHOTO Filters
+  blur_title: Blur
+  blur_label: Threshold
+  blur_tooltip: |-
+    Rejects blurry and unclear photos. All photos with fewer sharp details will be rejected.
+
+    💡 Recommendation: 100. If check is too strict — reduce to 60-80.
+  exp_title: Exposure
+  exp_dark_label: Dark <
+  exp_bright_label: Bright >
+  exp_tooltip: |-
+    Rejects too dark (below '<' limit) or overexposed (above '>' limit) shots.
+
+    💡 Recommendation: keep <30 for dark and >235 for bright. If normal night photos are rejected — lower the dark threshold.
+  res_title: Min. Resolution
+  res_tooltip: |-
+    Rejects images smaller than selected. Helps filter out small previews and system icons.
+
+    💡 Recommendation: 800x600.
+  corrupted_title: Corrupted Files
+  corrupted_tooltip: Files with damaged structure (that cannot be opened) will be
+    rejected.
+  video_title: VIDEO Filters
+  dur_title: Min. Duration (sec)
+  dur_tooltip: |-
+    Rejects videos shorter than specified (e.g., accidental button taps).
+
+    💡 Recommendation: 3 seconds.
+  vid_res_title: Min. Resolution
+  vid_res_tooltip: |-
+    Rejects videos with resolution lower than specified.
+
+    💡 Recommendation: 480p or 720p.
+  vid_dark_title: Dark Video
+  vid_dark_tooltip: |-
+    Rejects videos with frames that are generally too dark (shot at night or with a covered lens).
+
+    ⚠️ Warning: Enabling this significantly increases processing time as it requires analyzing every video frame.
+  vid_sound_title: No Audio
+  vid_sound_tooltip: Rejects videos with no audio track (e.g., corrupted recording
+    or camera without a microphone).
+  btn_run: Start Cleaning
+  launch_safe: |
+    Safe analysis.
+  launch_hint: 'Rejected files will be moved to the '
+  launch_hint_end: ' folder without permanent deletion.'
+  stop_msg: ⚠️ Stopping process...
+  error_parse: Settings parse error. Check your numbers.
+  error_folder: 'Error: Select a folder.'
+sort:
+  title_white: 'Media '
+  title_green: Sorter
+  description: Automatically organize photos and videos into folders by shooting date.
+  stat_sorted: SORTED
+  dir_title: DIRECTORY SETTINGS
+  src_label: '1. Source folder:'
+  src_hint: Select folder with unsorted photos and videos
+  dst_label: '2. Destination:'
+  dst_hint: Select folder for your new organized archive
+  dir_hint: 📁 Files will be moved and organized into folders according to the selected
+    structure.
+  structure_title: FOLDER STRUCTURE
+  radio_nested: Year / Month / Files  (e.g. 2025/January/)
+  radio_flat: Year_Month / Files  (e.g. 2025_January/)
+  options_title: SORTING OPTIONS
+  opt_screenshots: Separate Screenshots
+  opt_screenshots_tip: Files identified as screenshots (by name or EXIF) are moved
+    to a separate folder.
+  opt_fallback: Use System Date
+  opt_fallback_tip: If no date found in EXIF or filename — uses file creation/modification
+    date from OS.
+  opt_rename: Rename Files
+  opt_rename_tip: |-
+    ⚠️ Warning: irreversible action!
+    Files will be renamed to YYYY_MM_DD_HHMMSS + original extension.
+  dashboard_header: ANALYSIS RESULTS (STEP 3)
+  box_exif_title: from metadata
+  box_exif_sub: EXIF / video tags
+  box_name_title: from filename
+  box_name_sub: date found in name
+  box_os_title: from system
+  box_os_sub: creation date
+  box_screen_title: screenshots
+  box_screen_sub: '{name} folder'
+  box_none_title: undetermined
+  box_none_sub: '{name} folder'
+  btn_analyse: Analyze
+  btn_sort: Sort
+  error_src: 'Error: Select a source folder.'
+  error_dst: 'Error: Select a destination folder.'
+  error_analyse_first: 'Error: First select a source folder and run analysis.'
+  stop_signal: ⚠️ Stop signal sent...
+  analysis_done: Analysis completed in {time} sec — {count} files
+  sort_done: 'Done in {time} sec — moved: {moved}, to {name}: {undated}'
+  sort_errors: 'Errors ({count}):'
+  dialog_title: 'Warning: Irreversible Action'
+  dialog_content: |-
+    Original file names will be lost. They will be renamed based on their date.
+    Are you sure you want to enable this option?
+  dialog_confirm: I understand, enable
+  dialog_confirm_timer: I understand, enable ({n})
+  dialog_cancel: Cancel
+w:
+  twin:
+    start: '🚀 Analysis started. Folder: {path}'
+    dest: '📂 Results will be in: {path}'
+    threshold: '🎚 Similarity threshold: {val}'
+    searching: Searching files...
+    no_files: 📭 No photos found or process stopped.
+    found: 📡 Found {n} files. Starting hashing...
+    stopped: 🛑 Process stopped!
+    step1: 'Step 1: Hashing'
+    hash_done: ✅ Hashing complete. Searching for duplicates...
+    step2: 'Step 2: Comparison'
+    look_ahead_on: '🔍 Look Ahead enabled: window {n}.'
+    look_ahead_off: '🔍 Look Ahead disabled: window {n}.'
+    report_header: 📊 SUMMARY REPORT
+    report_time: '⏱ Execution time: {val} min.'
+    report_total: '📦 Total processed: {size} ({n} pcs.)'
+    report_moved: '🧹 Duplicates moved: {size} [{pct}%] ({n} pcs.)'
+    report_errors: '⚠️ Skipped due to errors: '
+    error_read: (reading)
+    error_move: (moving)
+    critical: '❌ CRITICAL ERROR: {err}'
+    done_file: Done
+    done_status: Completed
+  clean:
+    scanning: Searching files in folder...
+    scan_stopped: 🛑 Scanning stopped
+    no_files: No files found.
+    found: Found {n} files ({size}). Analyzing...
+    analysis_stopped: 🛑 Analysis stopped!
+    result: 'Rejected: {n} pcs. ({size}) - cleaned {pct}%'
+  sort:
+    found: Found {n} files. Starting analysis...
+    analysis_stopped: 🛑 Analysis stopped!
+    sort_stopped: 🛑 Sorting stopped!
+    file_busy: File is in use by another program
+    unknown_error: Unknown error
+months:
+  '1': January
+  '2': February
+  '3': March
+  '4': April
+  '5': May
+  '6': June
+  '7': July
+  '8': August
+  '9': September
+  '10': October
+  '11': November
+  '12': December
+folders:
+  duplicates_prefix: DUPLICATES_
+  clean_prefix: CLEANED_TRASH_
+  screenshots: Screenshots
+  undated: _undated
+  blurry: Blurry
+  dark: Dark
+  bright: Bright
+  low_res: LowRes
+  corrupted: Corrupted
+  short_video: ShortVideo
+  dark_video: DarkVideo
+  low_res_video: LowResVideo
+updater:
+  update_available_title: Update Available
+  update_available_text: "A new version ({version}) is available. Would you like to download it?"
+  update_yes: Yes
+  update_no: No
